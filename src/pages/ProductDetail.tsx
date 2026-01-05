@@ -197,7 +197,7 @@ export default function ProductDetail() {
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4">
           <Link to="/products">
-            <Button variant="ghost" className="mb-6 pl-0 hover:pl-2 transition-all hover:bg-transparent">
+            <Button variant="ghost" className="mb-6 pl-0 hover:pl-2 transition-all hover:bg-[#005081]">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Products
             </Button>
@@ -305,7 +305,7 @@ export default function ProductDetail() {
                   onClick={handleAddToCart}
                   disabled={(product.stock_qty || 0) <= 0}
                   size="lg"
-                  className="w-full h-14 text-lg font-semibold bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20"
+                  className="w-full h-14 text-lg font-semibold bg-[#005081] hover:bg-[#be1800] shadow-lg shadow-blue-600/20"
                 >
                   Add to Cart
                 </Button>
@@ -319,19 +319,19 @@ export default function ProductDetail() {
                 <TabsList className="w-full justify-start bg-white border-b border-slate-200 rounded-none h-12 p-0 mb-6">
                   <TabsTrigger
                     value="description"
-                    className="h-full px-6 data-[state=active]:border-b-2 data-[state=active]:border-blue-600 data-[state=active]:text-blue-600 rounded-none bg-transparent"
+                    className="h-full px-6 data-[state=active]:border-b-2 data-[state=active]:border-[#be1800] data-[state=active]:text-[#005081] rounded-none bg-transparent"
                   >
                     Description
                   </TabsTrigger>
                   <TabsTrigger
                     value="specs"
-                    className="h-full px-6 data-[state=active]:border-b-2 data-[state=active]:border-blue-600 data-[state=active]:text-blue-600 rounded-none bg-transparent"
+                    className="h-full px-6 data-[state=active]:border-b-2 data-[state=active]:border-[#be1800] data-[state=active]:text-[#005081] rounded-none bg-transparent"
                   >
                     Specifications
                   </TabsTrigger>
                   <TabsTrigger
                     value="reviews"
-                    className="h-full px-6 data-[state=active]:border-b-2 data-[state=active]:border-blue-600 data-[state=active]:text-blue-600 rounded-none bg-transparent"
+                    className="h-full px-6 data-[state=active]:border-b-2 data-[state=active]:border-[#be1800] data-[state=active]:text-[#005081] rounded-none bg-transparent"
                   >
                     Reviews
                   </TabsTrigger>

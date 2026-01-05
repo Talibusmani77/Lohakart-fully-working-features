@@ -178,15 +178,15 @@ export default function Home() {
   const testimonials = [
     {
       quote: "Lohakart has transformed how we source structural steel. Their transparent pricing and quality assurance are unmatched in the industry.",
-      author: "Rajesh Kumar",
-      role: "Operations Director, BuildRight Infra",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100"
+      author: "Ghufran Ahmad",
+      role: " CEO, Ahmad Metal Works",
+      image: "/man1.jpg"
     },
     {
-      quote: "The carbon accounting feature integrates perfectly with our sustainability goals. A truly future-ready marketplace for metals.",
-      author: "Sneha Sharma",
-      role: "Procurement Head, GreenTech Solutions",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100"
+      quote: "The platform streamlines metal procurement with transparent sourcing and integrated carbon accounting, aligning perfectly with sustainability goals for future-ready industries.",
+      author: "Waseem Akram",
+      role: "Operations Director, JKW Construction",
+      image: "/man2.jpg"
     }
   ];
 
@@ -299,7 +299,7 @@ export default function Home() {
         {latestNews.length > 0 && (
           <section className="py-24 bg-gray-50">
             <div className="container mx-auto px-4">
-              <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                 <div className="max-w-2xl">
                   <span className="text-sm font-bold uppercase tracking-widest mb-3 block" style={{ color: '#be1800' }}>
                     Knowledge Center

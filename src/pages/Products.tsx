@@ -125,40 +125,32 @@ export default function Products() {
 
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-red-50 rounded-full blur-[140px] -mr-96 -mt-96 opacity-60" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[120px] -ml-64 -mb-64 opacity-40" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] lg:w-[800px] lg:h-[800px] bg-red-50 rounded-full blur-[100px] sm:blur-[120px] lg:blur-[140px] -mr-48 sm:-mr-64 lg:-mr-96 -mt-48 sm:-mt-64 lg:-mt-96 opacity-60" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] lg:w-[600px] lg:h-[600px] bg-blue-50 rounded-full blur-[80px] sm:blur-[100px] lg:blur-[120px] -ml-32 sm:-ml-48 lg:-ml-64 -mb-32 sm:-mb-48 lg:-mb-64 opacity-40" />
       </div>
 
-      <main className="flex-1 py-12 px-4 relative z-10">
+      <main className="flex-1 py-8 sm:py-10 lg:py-12 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="container mx-auto max-w-7xl">
-          {/* Breadcrumbs & Navigation */}
-          <div className="mb-8">
-            <Link to="/">
-              <Button variant="ghost" className="text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 group gap-2 px-0 transition-all">
-                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                Back to Marketplace
-              </Button>
-            </Link>
-          </div>
+          
 
           {/* Hero Section */}
-          <section className="mb-16">
-            <div className="flex flex-col md:flex-row justify-between items-end gap-8">
+          <section className="mb-12 sm:mb-14 lg:mb-16">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 sm:gap-8">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="max-w-2xl"
+                className="max-w-2xl w-full"
               >
-                <Badge className="bg-[#be1800]/10 text-[#be1800] border-[#be1800]/20 hover:bg-[#be1800]/20 mb-4 font-black uppercase tracking-widest px-4 py-1">Industrial Inventory</Badge>
-                <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1] mb-6">
-                  Premium <span className="relative">
+                <Badge className="bg-[#be1800]/10 text-[#be1800] border-[#be1800]/20 hover:bg-[#be1800]/20 mb-3 sm:mb-4 font-black uppercase tracking-widest px-3 sm:px-4 py-1 text-[9px] sm:text-[10px]">Industrial Inventory</Badge>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.1] mb-4 sm:mb-6">
+                  Premium <span className="relative inline-block">
                     <span className="relative z-10 text-[#be1800]">Metal</span>
-                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#be1800]/10 fill-current" viewBox="0 0 100 20" preserveAspectRatio="none">
+                    <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2 sm:h-3 text-[#be1800]/10 fill-current" viewBox="0 0 100 20" preserveAspectRatio="none">
                       <path d="M0 10 Q 25 20 50 10 T 100 10" />
                     </svg>
                   </span> Solutions
                 </h1>
-                <p className="text-slate-500 text-lg md:text-xl font-medium leading-relaxed">
+                <p className="text-slate-500 text-base sm:text-lg md:text-xl font-medium leading-relaxed">
                   Browse our high-grade, certified steel and aluminum components precision-engineered for professional industrial applications.
                 </p>
               </motion.div>
@@ -166,18 +158,18 @@ export default function Products() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="w-full md:w-auto flex flex-col sm:flex-row gap-4"
+                className="w-full md:w-auto"
               >
-                <div className="relative group min-w-[300px]">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-[#be1800] transition-colors" />
+                <div className="relative group w-full sm:min-w-[280px] md:min-w-[300px]">
+                  <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-[#be1800] transition-colors" />
                   <Select value={filter} onValueChange={setFilter}>
-                    <SelectTrigger className="w-full h-14 bg-white border-slate-200 pl-11 rounded-2xl shadow-sm focus:border-[#be1800] focus:ring-[#be1800]/10 transition-all font-bold text-slate-700">
+                    <SelectTrigger className="w-full h-12 sm:h-14 bg-white border-slate-200 pl-10 sm:pl-11 rounded-xl sm:rounded-2xl shadow-sm focus:border-[#be1800] focus:ring-[#be1800]/10 transition-all font-bold text-slate-700 text-sm sm:text-base">
                       <SelectValue placeholder="Category Selection" />
                     </SelectTrigger>
-                    <SelectContent className="rounded-2xl border-slate-200 shadow-xl">
-                      <SelectItem value="all" className="font-bold py-3">All Strategic Metals</SelectItem>
+                    <SelectContent className="rounded-xl sm:rounded-2xl border-slate-200 shadow-xl">
+                      <SelectItem value="all" className="font-bold py-2 sm:py-3 text-sm sm:text-base">All Strategic Metals</SelectItem>
                       {categories.map(cat => (
-                        <SelectItem key={cat.id} value={cat.id} className="font-bold py-3 capitalize">
+                        <SelectItem key={cat.id} value={cat.id} className="font-bold py-2 sm:py-3 capitalize text-sm sm:text-base">
                           {cat.name}
                         </SelectItem>
                       ))}
@@ -187,11 +179,11 @@ export default function Products() {
               </motion.div>
             </div>
 
-            <div className="h-px bg-gradient-to-r from-slate-200 via-slate-100 to-transparent mt-12 w-full" />
+            <div className="h-px bg-gradient-to-r from-slate-200 via-slate-100 to-transparent mt-8 sm:mt-10 lg:mt-12 w-full" />
           </section>
 
           {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
             <AnimatePresence>
               {filteredProducts.map((product, index) => (
                 <motion.div
@@ -202,7 +194,7 @@ export default function Products() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
-                  <Card className="h-full flex flex-col bg-white border-slate-200 hover:border-[#be1800]/40 transition-all duration-500 overflow-hidden group shadow-sm hover:shadow-2xl hover:-translate-y-2 rounded-[2rem]">
+                  <Card className="h-full flex flex-col bg-white border-slate-200 hover:border-[#be1800]/40 transition-all duration-500 overflow-hidden group shadow-sm hover:shadow-2xl hover:-translate-y-2 rounded-2xl sm:rounded-[2rem]">
                     <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50">
                       {product.images && product.images.length > 0 ? (
                         <img
@@ -212,83 +204,91 @@ export default function Products() {
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <Package className="h-20 w-20 text-slate-100 group-hover:text-red-50 transition-colors" />
+                          <Package className="h-16 w-16 sm:h-20 sm:w-20 text-slate-100 group-hover:text-red-50 transition-colors" />
                         </div>
                       )}
 
                       {/* Overlays */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                      <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
+                      <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-10 flex flex-col gap-2">
                         <Badge
                           variant={(product.stock_qty || 0) > 0 ? "default" : "secondary"}
                           className={`
                             ${(product.stock_qty || 0) > 0 ? "bg-[#be1800]/90" : "bg-slate-200 text-slate-600"} 
-                            backdrop-blur-md font-black uppercase text-[10px] tracking-widest px-3 py-1 border-none shadow-lg
+                            backdrop-blur-md font-black uppercase text-[9px] sm:text-[10px] tracking-widest px-2 sm:px-3 py-1 border-none shadow-lg
                           `}
                         >
                           {(product.stock_qty || 0) > 0 ? 'Verified Stock' : 'Out of Logistics'}
                         </Badge>
                         {product.featured && (
-                          <Badge className="bg-amber-400 text-amber-950 font-black uppercase text-[10px] tracking-widest px-3 py-1 border-none shadow-lg">Premium Tier</Badge>
+                          <Badge className="bg-amber-400 text-amber-950 font-black uppercase text-[9px] sm:text-[10px] tracking-widest px-2 sm:px-3 py-1 border-none shadow-lg">Premium Tier</Badge>
                         )}
                       </div>
 
-                      <div className="absolute bottom-4 left-4 z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2 border border-white/20">
-                          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                          <span className="text-[10px] font-black uppercase tracking-tighter text-slate-700">Real-time Pricing</span>
+                      <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 z-10 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <div className="bg-white/90 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-1.5 rounded-full flex items-center gap-1.5 sm:gap-2 border border-white/20">
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 animate-pulse" />
+                          <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-tighter text-slate-700">Real-time Pricing</span>
                         </div>
                       </div>
                     </div>
 
-                    <CardContent className="flex-1 p-8">
+                    <CardContent className="flex-1 p-5 sm:p-6 lg:p-8">
                       <div className="flex flex-col h-full">
-                        <div className="mb-6">
-                          <div className="flex items-center justify-between mb-3">
-                            <span className="text-[10px] font-black text-[#be1800] uppercase tracking-[0.2em]">{getCategoryName(product.category_id)}</span>
-                            {product.grade && <span className="text-[10px] font-bold text-slate-400 uppercase">Grade: {product.grade}</span>}
+                        <div className="mb-4 sm:mb-6">
+                          <div className="flex items-center justify-between mb-2 sm:mb-3">
+                            <span className="text-[9px] sm:text-[10px] font-black text-[#be1800] uppercase tracking-[0.15em] sm:tracking-[0.2em]">{getCategoryName(product.category_id)}</span>
+                            {product.grade && <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase">Grade: {product.grade}</span>}
                           </div>
                           <Link to={`/products/${product.id}`} className="block">
-                            <h3 className="text-2xl font-black text-slate-900 leading-tight mb-3 group-hover:text-[#be1800] transition-colors">{product.name}</h3>
+                            <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight mb-2 sm:mb-3 group-hover:text-[#be1800] transition-colors line-clamp-2">{product.name}</h3>
                           </Link>
-                          <p className="text-slate-500 font-medium text-sm line-clamp-2 leading-relaxed h-10">
+                          <p className="text-slate-500 font-medium text-xs sm:text-sm line-clamp-2 leading-relaxed h-8 sm:h-10">
                             {product.description || 'Professional-grade industrial component with verified technical specifications.'}
                           </p>
                         </div>
 
-                        <div className="mt-auto pt-6 border-t border-slate-100 flex items-end justify-between">
-                          <div>
-                            <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">Market Quotation</span>
-                            <div className="flex items-baseline gap-1.5">
-                              <span className="text-3xl font-black text-slate-900 tracking-tighter">₹{product.price?.toLocaleString() || '---'}</span>
-                              <span className="text-sm font-bold text-slate-400">/{product.unit}</span>
+                        <div className="mt-auto pt-4 sm:pt-6 border-t border-slate-100 flex items-end justify-between gap-3">
+                          <div className="flex-1 min-w-0">
+                            <span className="text-[9px] sm:text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">Market Quotation</span>
+                            <div className="flex items-baseline gap-1 sm:gap-1.5 flex-wrap">
+                              <span className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tighter">₹{product.price?.toLocaleString() || '---'}</span>
+                              <span className="text-xs sm:text-sm font-bold text-slate-400">/{product.unit}</span>
                             </div>
                           </div>
 
                           {product.min_order && (
-                            <div className="text-right">
-                              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">M.O.Q</span>
-                              <span className="text-sm font-black text-slate-700">{product.min_order} {product.unit}</span>
+                            <div className="text-right flex-shrink-0">
+                              <span className="text-[9px] sm:text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">M.O.Q</span>
+                              <span className="text-xs sm:text-sm font-black text-slate-700 whitespace-nowrap">{product.min_order} {product.unit}</span>
                             </div>
                           )}
                         </div>
                       </div>
                     </CardContent>
 
-                    <CardFooter className="p-8 pt-0 flex gap-4">
-                      <Link to={`/products/${product.id}`} className="flex-1">
-                        <Button variant="outline" className="w-full h-14 border-slate-200 hover:border-slate-800 hover:bg-slate-50 font-black uppercase tracking-widest rounded-2xl transition-all text-xs">
-                          <Info className="h-4 w-4 mr-2" />
+                    <CardFooter className="p-5 sm:p-6 lg:p-8 pt-0 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                      <Link to={`/products/${product.id}`} className="w-full sm:flex-1">
+                        <Button
+                          variant="outline"
+                          className="w-full h-12 sm:h-14 border-slate-200 
+                          hover:border-[#005081] hover:bg-slate-50 
+                          hover:text-[#005081]
+                          font-black uppercase tracking-widest 
+                          rounded-xl sm:rounded-2xl transition-all 
+                          text-[10px] sm:text-xs"
+  >
+                          <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                           Details
                         </Button>
                       </Link>
                       <Button
                         onClick={() => handleAddToCart(product)}
                         disabled={(product.stock_qty || 0) <= 0}
-                        className="flex-1 h-14 bg-[#be1800] hover:bg-[#a01500] text-white font-black uppercase tracking-widest rounded-2xl shadow-xl shadow-red-900/20 active:scale-[0.98] transition-all text-xs"
+                        className="w-full sm:flex-1 h-12 sm:h-14 bg-[#be1800] hover:bg-[#a01500] text-white font-black uppercase tracking-widest rounded-xl sm:rounded-2xl shadow-xl shadow-red-900/20 active:scale-[0.98] transition-all text-[10px] sm:text-xs disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        <ShoppingCart className="h-4 w-4 mr-2" />
+                        <ShoppingCart className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
                         Procure
                       </Button>
                     </CardFooter>
@@ -302,21 +302,21 @@ export default function Products() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-center py-32 bg-white rounded-[3rem] border border-dashed border-slate-200 mt-8 shadow-sm"
+              className="text-center py-20 sm:py-28 lg:py-32 bg-white rounded-2xl sm:rounded-[3rem] border border-dashed border-slate-200 mt-6 sm:mt-8 shadow-sm px-4"
             >
-              <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Package className="h-10 w-10 text-slate-200" />
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Package className="h-8 w-8 sm:h-10 sm:w-10 text-slate-200" />
               </div>
-              <h3 className="text-2xl font-black text-slate-900 mb-2">Inventory Ledger Clear</h3>
-              <p className="text-slate-500 font-medium max-w-sm mx-auto mb-8">
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2">Inventory Ledger Clear</h3>
+              <p className="text-slate-500 font-medium max-w-sm mx-auto mb-6 sm:mb-8 text-sm sm:text-base px-4">
                 {searchQuery ? `No industrial components matched your query: "${searchQuery}"` : 'We are currently updating our strategic inventory. Check back soon.'}
               </p>
               <Button
                 variant="outline"
                 onClick={() => setFilter('all')}
-                className="font-black uppercase tracking-widest border-slate-200 rounded-xl"
+                className="font-black uppercase tracking-widest border-slate-200 rounded-xl text-xs sm:text-sm h-11 sm:h-12 px-6"
               >
-                Reset Diagnostics
+                Reset Filter
               </Button>
             </motion.div>
           )}

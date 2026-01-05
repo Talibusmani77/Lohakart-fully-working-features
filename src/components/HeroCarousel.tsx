@@ -9,7 +9,7 @@ const slides = [
         id: 1,
         title: "Enterprise Grade Metal Trading Marketplace",
         description: "Lohakart streamlines B2B metal procurement with real-time pricing, transparent logistics, and automated carbon accounting.",
-        image: "/ferrous-metal-sourcing-b2b-lohakart.webp",
+        image: "/metal-trading-b2b-solutions-lohakart-metal-materials.webp",
         cta: "Explore Marketplace",
         link: "/products"
     },

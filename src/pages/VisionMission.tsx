@@ -211,7 +211,7 @@ export default function VisionMission() {
                             >
                                 <div className="aspect-square rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl relative group">
                                     <img
-                                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000"
+                                        src="/vision-mission-metals-b2b-lohakart.jpg"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         alt="Vision Illustration"
                                     />

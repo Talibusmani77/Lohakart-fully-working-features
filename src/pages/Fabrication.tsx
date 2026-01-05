@@ -137,7 +137,7 @@ export default function Fabrication() {
 
             {/* Hero Section */}
             <div className="bg-slate-900 text-white py-20 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20"></div>
+                <div className="absolute inset-0 bg-[url('/metal-fabrication-services-b2b-lohakart.webp')] bg-cover bg-center opacity-35"></div>
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -193,49 +193,49 @@ export default function Fabrication() {
                                 title: "Heavy Industrial Fabrication",
                                 desc: "Expert heavy industrial fabrication services for large-scale manufacturing and construction, provided by LohaKart.",
                                 sub: "Precision-driven solutions for all heavy industrial fabrication needs.",
-                                img: "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80"
+                                img: "/heavy-industrial-fabrication-services-lohakart.webp"
                             },
                             {
                                 title: "Sheet Metal Fabrication",
                                 desc: "High-precision sheet metal fabrication services for diverse industrial applications, offered by LohaKart.",
                                 sub: "Expertly crafted solutions for precise sheet metal fabrication projects.",
-                                img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80"
+                                img: "/sheet-metal-fabrication-services-lohakart.webp"
                             },
                             {
                                 title: "Castings & Forgings",
                                 desc: "Custom castings and forgings for manufacturing and industrial projects, provided by LohaKart’s expert team.",
                                 sub: "Precise castings and Forgings services for tailored metal solutions.",
-                                img: "https://images.unsplash.com/photo-1590486803833-ffc94244ecba?auto=format&fit=crop&q=80"
+                                img: "/castings-forgings-metal-fabrication-lohakart.webp"
                             },
                             {
                                 title: "Cut to Length",
                                 desc: "Accurate cut-to-length metal processing for customized requirements, available at LohaKart.",
                                 sub: "Providing accurate, customized metal cut-to-length services efficiently.",
-                                img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"
+                                img: "/cut-to-length-metal-services-lohakart.webp"
                             },
                             {
                                 title: "Slitting",
                                 desc: "Precision metal slitting services for tailored industrial and manufacturing needs, provided by LohaKart.",
                                 sub: "Delivering precise, high-quality metal slitting for various applications.",
-                                img: "https://images.unsplash.com/photo-1565439380698-54234056a91b?auto=format&fit=crop&q=80"
+                                img: "/metal-slitting-services-lohakart.webp"
                             },
                             {
                                 title: "Shearing, Bending & Rolling",
                                 desc: "Professional shearing, bending, and rolling services for metal fabrication, available from LohaKart.",
                                 sub: "Expert shearing, bending, and rolling for custom metal fabrication.",
-                                img: "https://images.unsplash.com/photo-1534394046246-887e0767228a?auto=format&fit=crop&q=80"
+                                img: "/shearing-bending-rolling-metal-fabrication-lohakart.webp"
                             },
                             {
                                 title: "Laser Cutting & Welding",
                                 desc: "Advanced laser cutting and welding services for precise and high-quality metal fabrication, offered by LohaKart.",
                                 sub: "Precision laser cutting and welding for flawless metal fabrication.",
-                                img: "https://images.unsplash.com/photo-1517420879524-86d64ac2f339?auto=format&fit=crop&q=80"
+                                img: "/laser-cutting-welding-metal-services-lohakart.webp"
                             },
                             {
                                 title: "CNC Machining & Job Works",
                                 desc: "CNC machining and job work services for accurate and efficient metal processing, provided by LohaKart.",
                                 sub: "Reliable CNC machining and job works for custom solutions.",
-                                img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80"
+                                img: "/cnc-machining-job-works-lohakart.webp"
                             }
                         ].map((service, index) => (
                             <motion.div
