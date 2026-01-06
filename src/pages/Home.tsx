@@ -60,25 +60,25 @@ export default function Home() {
     {
       title: 'Ferrous Metals',
       description: 'Comprehensive range of steel products for structural, industrial, and construction applications.',
-      image: '/ferrous_metal_category_1767524890383.png',
+      image: '/ferrous-metal-sourcing-b2b-lohakart.webp',
       items: ['Mild Steel', 'Stainless Steel', 'TMT Bar', 'Round Bar', 'Angles', 'Channels', 'Beams', 'Flats', 'Billets']
     },
     {
       title: 'Non-Ferrous Metals',
       description: 'High-quality aluminium, copper, zinc, and alloy products for specialized industrial needs.',
-      image: '/non_ferrous_metal_category_1767524908838.png',
+      image: '/non-ferrous-metal-sourcing-b2b-lohakart.webp',
       items: ['Aluminium Wire Rod', 'Copper Cathode', 'Copper Wire Rod', 'Aluminium Alloy Ingot', 'Lead Ingot', 'Zinc Ingot']
     },
     {
       title: 'Manufacturing & Fabrication',
       description: 'Precision engineered fabrication solutions from laser cutting to heavy machining job works.',
-      image: '/fabrication_metal_category_1767524941766.png',
+      image: '/manufacturing-fabrication-services-b2b-lohakart.webp',
       items: ['Heavy Fabrication', 'Laser Cutting', 'CNC Bending', 'Castings', 'Forgings', 'Machining', 'Job Works']
     },
     {
       title: 'Metal Recycling',
       description: 'Sustainable metal scrap processing and rare metal recycling for a greener industrial future.',
-      image: '/recycling_metal_category_1767524958854.png',
+      image: '/metal-recycling-solutions-b2b-lohakart.webp',
       items: ['Steel Recycling', 'Aluminium Recycling', 'Copper Recycling', 'Lead Recycling', 'Rare Metal Recycling']
     }
   ];
@@ -87,32 +87,38 @@ export default function Home() {
     {
       icon: ShoppingCart,
       title: 'Direct Buying',
-      description: 'Procure high-quality metal products directly from verified manufacturers and distributors.'
+      description: 'Procure high-quality metal products directly from verified manufacturers and distributors.',
+      link: '/products'
     },
     {
       icon: BarChart3,
       title: 'Carbon Accounting',
-      description: 'Track and optimize your carbon footprint with our integrated carbon-aware marketplace.'
+      description: 'Track and optimize your carbon footprint with our integrated carbon-aware marketplace.',
+      link: '/services/carbon-accounting'
     },
     {
       icon: Hammer,
       title: 'Advanced Fabrication',
-      description: 'Custom metal fabrication services using state-of-the-art CNC and laser technology.'
+      description: 'Custom metal fabrication services using state-of-the-art CNC and laser technology.',
+      link: '/services/fabrication'
     },
     {
       icon: Recycle,
       title: 'Circular Recycling',
-      description: 'Transform metal waste into high-value raw materials through our sustainable recycling network.'
+      description: 'Transform metal waste into high-value raw materials through our sustainable recycling network.',
+      link: '/services/recycling'
     },
     {
       icon: BarChart,
       title: 'Real-time Pricing',
-      description: 'Access transparent, live market pricing for various ferrous and non-ferrous metal indexes.'
+      description: 'Access transparent, live market pricing for various ferrous and non-ferrous metal indexes.',
+      link: '/pricing'
     },
     {
       icon: Truck,
       title: 'Industrial Logistics',
-      description: 'Reliable pan-India logistics network ensuring timely delivery of heavy industrial materials.'
+      description: 'Reliable pan-India logistics network ensuring timely delivery of heavy industrial materials.',
+      link: '/contact'
     }
   ];
 
@@ -407,13 +413,19 @@ export default function Home() {
                     <p className="text-gray-600 text-sm leading-relaxed mb-6">
                       {service.description}
                     </p>
-                    <Link to="/contact">
+                    <Link to={service.link}>
                       <Button 
                         variant="ghost" 
-                        className="p-0 h-auto font-bold transition-colors"
+                        className="p-0 h-auto font-bold transition-colors bg-transparent hover:bg-transparent"
                         style={{ color: '#005081' }}
-                        onMouseEnter={(e) => e.currentTarget.style.color = '#be1800'}
-                        onMouseLeave={(e) => e.currentTarget.style.color = '#005081'}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.color = '#be1800';
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.color = '#005081';
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                        }}
                       >
                         Learn More <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>

@@ -106,18 +106,32 @@ export default function Products() {
   };
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex flex-col bg-white">
-        <Navbar />
-        <div className="flex-1 flex items-center justify-center">
-          <div className="relative">
-            <div className="h-16 w-16 animate-spin rounded-full border-4 border-slate-100 border-t-[#be1800]"></div>
-            <div className="absolute inset-0 flex items-center justify-center font-black text-[10px] text-slate-400 uppercase tracking-tighter">Loha</div>
+  return (
+    <div className="min-h-screen flex flex-col bg-white">
+      <Navbar />
+      <div className="flex-1 flex items-center justify-center p-4">
+        <div className="relative">
+          {/* Spinning Border */}
+          <div className="h-24 w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 animate-spin rounded-full border-4 md:border-[5px] border-slate-100 border-t-[#be1800]"></div>
+          
+          {/* Logo Image */}
+          <div className="absolute inset-0 flex items-center justify-center p-6 md:p-7 lg:p-8">
+            <img 
+              src="/Loha.png" 
+              alt="Lohakart" 
+              className="w-full h-full object-contain animate-pulse"
+            />
+          </div>
+          
+          {/* Optional: Pulsing background effect */}
+          <div className="absolute inset-0 -z-10">
+            <div className="h-full w-full rounded-full bg-[#be1800]/5 animate-ping"></div>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 font-outfit relative overflow-hidden">

@@ -191,7 +191,7 @@ export default function Recycling() {
 
             <main>
                 {/* HERO SECTION */}
-                <section className="relative min-h-[600px] sm:min-h-[650px] md:min-h-[700px] lg:min-h-[70vh] flex items-center bg-slate-950 overflow-hidden">
+                <section className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] flex items-center bg-slate-950 overflow-hidden">
                     <div className="absolute inset-0 z-0 opacity-40">
                         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent" />
                         <img
@@ -201,85 +201,88 @@ export default function Recycling() {
                         />
                     </div>
 
-                    <div className="container mx-auto px-4 sm:px-6 relative z-10 py-12 sm:py-16 md:py-20">
+                    <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 py-16 md:py-20 lg:py-24">
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             className="max-w-3xl"
                         >
-                            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider mb-6 sm:mb-8">
-                                <Recycle className="w-3 h-3 sm:w-4 sm:h-4" />
+                            <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs md:text-sm font-bold uppercase tracking-wider mb-4 md:mb-6">
+                                <Recycle className="w-3 h-3 md:w-4 md:h-4" />
                                 Sustainability Leadership
                             </div>
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 sm:mb-8 tracking-tight leading-tight">
+                            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tight leading-tight">
                                 Sustainable Metal <br />
                                 <span className="text-green-500">Recycling Solutions</span>
                             </h1>
-                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 font-medium leading-relaxed mb-8 sm:mb-12 max-w-2xl">
+                            <p className="text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed mb-6 md:mb-8 max-w-2xl">
                                 Lohakart is redefining metal recycling through innovation and technology, driving a circular economy for metals while cutting environmental impact.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
+                            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                                 <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
                                     <DialogTrigger asChild>
-                                        <Button size="lg" className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white h-14 sm:h-16 px-6 sm:px-8 text-base sm:text-lg md:text-xl font-bold rounded-xl sm:rounded-2xl shadow-2xl transition-all hover:scale-105">
-                                            Request for Recycling <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+                                        <Button 
+                                            size="lg" 
+                                            className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold rounded-xl shadow-2xl transition-all hover:scale-105"
+                                        >
+                                            Request for Recycling <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                                         </Button>
                                     </DialogTrigger>
-                                    <DialogContent className="w-[95vw] sm:max-w-[600px] bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 overflow-y-auto max-h-[90vh]">
+                                    <DialogContent className="w-[95vw] sm:max-w-[600px] bg-white rounded-2xl p-6 md:p-8 overflow-y-auto max-h-[90vh]">
                                         <DialogHeader className="mb-6">
-                                            <DialogTitle className="text-2xl sm:text-3xl font-black text-slate-900 mb-2">Recycling Request</DialogTitle>
-                                            <DialogDescription className="text-base sm:text-lg text-slate-500">
+                                            <DialogTitle className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Recycling Request</DialogTitle>
+                                            <DialogDescription className="text-sm md:text-base text-slate-500">
                                                 Please provide your industrial scrap details. Our experts will contact you for valuation and logistics.
                                             </DialogDescription>
                                         </DialogHeader>
 
                                         {!user ? (
-                                            <div className="text-center py-12 bg-slate-50 rounded-2xl sm:rounded-3xl border border-dashed border-slate-200">
-                                                <AlertCircle className="w-12 h-12 sm:w-16 sm:h-16 text-[#be1800] mx-auto mb-4" />
-                                                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Authentication Required</h3>
-                                                <p className="text-sm sm:text-base text-slate-500 mb-6 sm:mb-8 px-4">You must be signed in to submit a recycling request.</p>
+                                            <div className="text-center py-12 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                                                <AlertCircle className="w-12 h-12 md:w-16 md:h-16 text-[#be1800] mx-auto mb-4" />
+                                                <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Authentication Required</h3>
+                                                <p className="text-sm md:text-base text-slate-500 mb-6 md:mb-8 px-4">You must be signed in to submit a recycling request.</p>
                                                 <Link to="/auth">
-                                                    <Button className="bg-[#005081] hover:bg-[#be1800] transition-colors">Sign In Now</Button>
+                                                    <Button className="bg-[#005081] hover:bg-[#be1800] transition-colors text-sm md:text-base">Sign In Now</Button>
                                                 </Link>
                                             </div>
                                         ) : (
-                                            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                                    <div className="space-y-2">
-                                                        <label className="text-sm font-bold text-slate-700">Company Name</label>
-                                                        <Input name="company_name" value={formData.company_name} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-11 sm:h-12" placeholder="e.g. Acme Steels" />
+                                            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <div className="space-y-1.5">
+                                                        <label className="text-xs md:text-sm font-bold text-slate-700">Company Name</label>
+                                                        <Input name="company_name" value={formData.company_name} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-10 md:h-11 text-sm md:text-base" placeholder="e.g. Acme Steels" />
                                                     </div>
-                                                    <div className="space-y-2">
-                                                        <label className="text-sm font-bold text-slate-700">Contact Person</label>
-                                                        <Input name="contact_person" value={formData.contact_person} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-11 sm:h-12" placeholder="John Doe" />
+                                                    <div className="space-y-1.5">
+                                                        <label className="text-xs md:text-sm font-bold text-slate-700">Contact Person</label>
+                                                        <Input name="contact_person" value={formData.contact_person} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-10 md:h-11 text-sm md:text-base" placeholder="John Doe" />
                                                     </div>
-                                                    <div className="space-y-2">
-                                                        <label className="text-sm font-bold text-slate-700">Business Email</label>
-                                                        <Input type="email" name="email" value={formData.email} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-11 sm:h-12" placeholder="john@company.com" />
+                                                    <div className="space-y-1.5">
+                                                        <label className="text-xs md:text-sm font-bold text-slate-700">Business Email</label>
+                                                        <Input type="email" name="email" value={formData.email} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-10 md:h-11 text-sm md:text-base" placeholder="john@company.com" />
                                                     </div>
-                                                    <div className="space-y-2">
-                                                        <label className="text-sm font-bold text-slate-700">Phone Number</label>
-                                                        <Input name="phone" value={formData.phone} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-11 sm:h-12" placeholder="+91 ..." />
+                                                    <div className="space-y-1.5">
+                                                        <label className="text-xs md:text-sm font-bold text-slate-700">Phone Number</label>
+                                                        <Input name="phone" value={formData.phone} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-10 md:h-11 text-sm md:text-base" placeholder="+91 ..." />
                                                     </div>
-                                                    <div className="space-y-2">
-                                                        <label className="text-sm font-bold text-slate-700">Metal Type</label>
-                                                        <Input name="metal_type" value={formData.metal_type} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-11 sm:h-12" placeholder="e.g. HMS, Aluminum" />
+                                                    <div className="space-y-1.5">
+                                                        <label className="text-xs md:text-sm font-bold text-slate-700">Metal Type</label>
+                                                        <Input name="metal_type" value={formData.metal_type} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-10 md:h-11 text-sm md:text-base" placeholder="e.g. HMS, Aluminum" />
                                                     </div>
-                                                    <div className="space-y-2">
-                                                        <label className="text-sm font-bold text-slate-700">Estimated Quantity</label>
-                                                        <Input name="estimated_quantity" value={formData.estimated_quantity} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-11 sm:h-12" placeholder="e.g. 50 Tons" />
+                                                    <div className="space-y-1.5">
+                                                        <label className="text-xs md:text-sm font-bold text-slate-700">Estimated Quantity</label>
+                                                        <Input name="estimated_quantity" value={formData.estimated_quantity} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-10 md:h-11 text-sm md:text-base" placeholder="e.g. 50 Tons" />
                                                     </div>
                                                 </div>
-                                                <div className="space-y-2">
-                                                    <label className="text-sm font-bold text-slate-700">Pickup Location</label>
-                                                    <Input name="location" value={formData.location} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-11 sm:h-12" placeholder="City, State" />
+                                                <div className="space-y-1.5">
+                                                    <label className="text-xs md:text-sm font-bold text-slate-700">Pickup Location</label>
+                                                    <Input name="location" value={formData.location} onChange={handleInputChange} required className="rounded-xl border-slate-200 h-10 md:h-11 text-sm md:text-base" placeholder="City, State" />
                                                 </div>
-                                                <div className="space-y-2">
-                                                    <label className="text-sm font-bold text-slate-700">Description / Specifications</label>
-                                                    <Textarea name="description" value={formData.description} onChange={handleInputChange} className="rounded-xl border-slate-200 min-h-[100px]" placeholder="Briefly describe the condition and type of scrap..." />
+                                                <div className="space-y-1.5">
+                                                    <label className="text-xs md:text-sm font-bold text-slate-700">Description / Specifications</label>
+                                                    <Textarea name="description" value={formData.description} onChange={handleInputChange} className="rounded-xl border-slate-200 min-h-[100px] text-sm md:text-base" placeholder="Briefly describe the condition and type of scrap..." />
                                                 </div>
-                                                <Button type="submit" disabled={loading} className="w-full h-12 sm:h-14 bg-green-600 hover:bg-green-700 rounded-xl text-base sm:text-lg font-bold">
+                                                <Button type="submit" disabled={loading} className="w-full h-11 md:h-12 bg-green-600 hover:bg-green-700 rounded-xl text-sm md:text-base font-bold">
                                                     {loading ? "Submitting..." : "Submit Request"}
                                                 </Button>
                                             </form>
@@ -288,7 +291,11 @@ export default function Recycling() {
                                 </Dialog>
 
                                 <Link to="/contact" className="w-full sm:w-auto">
-                                    <Button size="lg" variant="outline" className="w-full border-2 border-white/40 hover:bg-white/10 h-14 sm:h-16 px-6 sm:px-8 text-base sm:text-lg md:text-xl font-bold rounded-xl sm:rounded-2xl backdrop-blur-md">
+                                    <Button 
+                                        size="lg" 
+                                        variant="outline" 
+                                        className="w-full border-2 border-white/40 hover:bg-white/10 h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold rounded-xl backdrop-blur-md "
+                                    >
                                         Talk to Expert
                                     </Button>
                                 </Link>
@@ -298,17 +305,17 @@ export default function Recycling() {
                 </section>
 
                 {/* RECYCLING PROCESS */}
-                <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white">
-                    <div className="container mx-auto px-4 sm:px-6">
-                        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20">
-                            <span className="text-green-600 font-black tracking-widest text-xs sm:text-sm uppercase mb-3 sm:mb-4 block">The Circular Path</span>
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4 sm:mb-6 md:mb-8 leading-tight px-4">Our Recycling Process</h2>
-                            <p className="text-base sm:text-lg md:text-xl text-slate-600 font-medium px-4">
+                <section className="py-16 md:py-20 lg:py-24 bg-white">
+                    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+                        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                            <span className="text-green-600 font-bold tracking-widest text-xs md:text-sm uppercase mb-3 block">The Circular Path</span>
+                            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6 leading-tight">Our Recycling Process</h2>
+                            <p className="text-sm md:text-base lg:text-lg text-slate-600">
                                 At LohaKart, we employ an efficient, environmentally responsible process to recycle metals and minimize waste across the industrial supply chain.
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                             {recyclingProcess.map((step, idx) => (
                                 <motion.div
                                     key={idx}
@@ -316,16 +323,16 @@ export default function Recycling() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: idx * 0.1 }}
-                                    className="relative group p-6 sm:p-8 md:p-10 rounded-3xl sm:rounded-[40px] bg-slate-50 border border-slate-100 transition-all hover:bg-white hover:shadow-2xl hover:shadow-green-900/5"
+                                    className="relative group p-6 md:p-8 rounded-2xl md:rounded-3xl bg-slate-50 border border-slate-100 transition-all hover:bg-white hover:shadow-xl"
                                 >
-                                    <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-green-600 text-lg sm:text-xl font-black border-2 border-green-600 z-10">
+                                    <div className="absolute -top-3 md:-top-4 -right-3 md:-right-4 w-8 h-8 md:w-10 md:h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-green-600 text-sm md:text-base font-bold border-2 border-green-600 z-10">
                                         {idx + 1}
                                     </div>
-                                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 sm:mb-8 border border-white group-hover:bg-green-600 group-hover:text-white transition-colors duration-500 text-green-600">
-                                        <step.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+                                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white shadow-sm flex items-center justify-center mb-4 md:mb-6 border border-white group-hover:bg-green-600 group-hover:text-white transition-colors duration-500 text-green-600">
+                                        <step.icon className="w-6 h-6 md:w-7 md:h-7" />
                                     </div>
-                                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">{step.title}</h3>
-                                    <p className="text-sm sm:text-base text-slate-500 leading-relaxed font-medium">
+                                    <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2 md:mb-3">{step.title}</h3>
+                                    <p className="text-sm md:text-base text-slate-500 leading-relaxed">
                                         {step.description}
                                     </p>
                                 </motion.div>
@@ -335,33 +342,33 @@ export default function Recycling() {
                 </section>
 
                 {/* MATERIALS GRID */}
-                <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-slate-50">
-                    <div className="container mx-auto px-4 sm:px-6">
-                        <div className="text-center mb-12 sm:mb-16 md:mb-24">
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-3 sm:mb-4 px-4">Materials We Recycle</h2>
-                            <div className="w-16 sm:w-20 md:w-24 h-1.5 sm:h-2 bg-green-500 mx-auto rounded-full" />
+                <section className="py-16 md:py-20 lg:py-24 bg-slate-50">
+                    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+                        <div className="text-center mb-12 md:mb-16">
+                            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-4">Materials We Recycle</h2>
+                            <div className="w-16 md:w-20 h-1 md:h-1.5 bg-green-500 mx-auto rounded-full" />
                         </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
                             {materials.map((m, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
-                                    className="bg-white rounded-3xl sm:rounded-[40px] md:rounded-[50px] p-6 sm:p-8 md:p-10 flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center border border-slate-100 shadow-sm hover:shadow-xl transition-all"
+                                    className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 items-center border border-slate-100 shadow-sm hover:shadow-xl transition-all"
                                 >
-                                    <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-2xl sm:rounded-3xl bg-slate-50 flex items-center justify-center text-green-600 border border-green-500/10 flex-shrink-0">
-                                        <m.icon className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" />
+                                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl md:rounded-2xl bg-slate-50 flex items-center justify-center text-green-600 border border-green-500/10 flex-shrink-0">
+                                        <m.icon className="w-10 h-10 md:w-12 md:h-12" />
                                     </div>
-                                    <div className="flex-1 space-y-4 sm:space-y-6 text-center md:text-left">
+                                    <div className="flex-1 space-y-4 text-center md:text-left">
                                         <div>
-                                            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">{m.name}</h3>
-                                            <p className="text-sm sm:text-base text-slate-500 font-medium">{m.desc}</p>
+                                            <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">{m.name}</h3>
+                                            <p className="text-sm md:text-base text-slate-500">{m.desc}</p>
                                         </div>
-                                        <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                                        <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-2">
-                                                <div className="flex justify-between text-xs sm:text-sm font-black uppercase text-slate-400">
+                                                <div className="flex justify-between text-xs md:text-sm font-bold uppercase text-slate-400">
                                                     <span>Recovery</span>
                                                     <span className="text-green-600">{m.recovery}%</span>
                                                 </div>
@@ -374,7 +381,7 @@ export default function Recycling() {
                                                 </div>
                                             </div>
                                             <div className="space-y-2">
-                                                <div className="flex justify-between text-xs sm:text-sm font-black uppercase text-slate-400">
+                                                <div className="flex justify-between text-xs md:text-sm font-bold uppercase text-slate-400">
                                                     <span>Saved</span>
                                                     <span className="text-blue-600">{m.savings}%</span>
                                                 </div>
@@ -395,27 +402,27 @@ export default function Recycling() {
                 </section>
 
                 {/* IMPACT METRICS */}
-                <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white relative overflow-hidden">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-green-500/5 rounded-full blur-[100px] -z-10" />
-                    <div className="container mx-auto px-4 sm:px-6">
-                        <div className="text-center mb-12 sm:mb-16 md:mb-24">
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4 sm:mb-8 px-4">Environmental Stewardship</h2>
+                <section className="py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-green-500/5 rounded-full blur-[100px] -z-10" />
+                    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+                        <div className="text-center mb-12 md:mb-16">
+                            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Environmental Stewardship</h2>
                         </div>
 
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
                             {metrics.map((m, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    className="text-center space-y-3 sm:space-y-4"
+                                    className="text-center space-y-3 md:space-y-4"
                                 >
-                                    <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl sm:rounded-3xl bg-green-50 text-green-600 flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                                        <m.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+                                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-green-50 text-green-600 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                                        <m.icon className="w-7 h-7 md:w-8 md:h-8" />
                                     </div>
-                                    <h4 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tighter">{m.value}</h4>
-                                    <p className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-slate-400 uppercase tracking-wide sm:tracking-widest px-2">{m.label}</p>
+                                    <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">{m.value}</h4>
+                                    <p className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-wide">{m.label}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -423,7 +430,7 @@ export default function Recycling() {
                 </section>
 
                 {/* FINAL CTA */}
-                <section className="py-20 sm:py-28 md:py-32 lg:py-40 bg-slate-950 text-white relative overflow-hidden">
+                <section className="py-16 md:py-24 lg:py-32 bg-slate-950 text-white relative overflow-hidden">
                     <div className="absolute inset-0 z-0 opacity-20">
                         <img
                             src="/stainless-steel-lohakart.webp"
@@ -432,30 +439,34 @@ export default function Recycling() {
                         />
                     </div>
 
-                    <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center max-w-4xl">
+                    <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 text-center max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 sm:mb-8 md:mb-10 tracking-tight leading-tight px-4">
+                            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 tracking-tight leading-tight">
                                 Ready to Transform Your <br />
                                 <span className="text-green-500">Metal Waste?</span>
                             </h2>
-                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 mb-10 sm:mb-12 md:mb-16 leading-relaxed px-4">
+                            <p className="text-sm md:text-base lg:text-lg text-slate-400 mb-8 md:mb-12 leading-relaxed">
                                 Partner with LohaKart for sustainable, efficient, and profitable recycling solutions that drive your business toward a circular economy.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 px-4">
+                            <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
                                 <Button
                                     onClick={() => setIsFormOpen(true)}
                                     size="lg"
-                                    className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white sm:min-w-[240px] md:min-w-[280px] h-16 sm:h-18 md:h-20 text-lg sm:text-xl md:text-2xl font-bold rounded-2xl sm:rounded-3xl shadow-2xl transition-all hover:scale-105 active:scale-95"
+                                    className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold rounded-xl shadow-2xl transition-all hover:scale-105"
                                 >
-                                    Request for Recycling <ChevronRight className="ml-2 sm:ml-3 h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
+                                    Request for Recycling <ChevronRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                                 </Button>
                                 <Link to="/contact" className="w-full sm:w-auto">
-                                    <Button size="lg" variant="outline" className="w-full border-2 border-white/40 text-black hover:bg-white/10 sm:min-w-[240px] md:min-w-[280px] h-16 sm:h-18 md:h-20 text-lg sm:text-xl md:text-2xl font-bold rounded-2xl sm:rounded-3xl backdrop-blur-md">
+                                    <Button 
+                                        size="lg" 
+                                        variant="outline" 
+                                        className="w-full border-2 border-white/40 text-black hover:bg-white/10 h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-bold rounded-xl backdrop-blur-md"
+                                    >
                                         Contact Team
                                     </Button>
                                 </Link>
