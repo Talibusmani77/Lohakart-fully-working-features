@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const slides = [
     {
         id: 1,
-        title: "Enterprise Grade Metal Trading Marketplace",
+        title: "Enterprise-Grade Carbon Intelligence Engine for Steel",
         description: "Lohakart streamlines B2B metal procurement with real-time pricing, transparent logistics, and automated carbon accounting.",
         image: "/metal-trading-b2b-solutions-lohakart-metal-materials.webp",
         cta: "Explore Marketplace",
@@ -19,7 +19,7 @@ const slides = [
         description: "From heavy sheet metal fabrication to precision laser cutting, we deliver engineered excellence for infrastructure and manufacturing.",
         image: "/img2.jpg",
         cta: "Custom Fabrication",
-        link: "/services"
+        link: "/services/fabrication"
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const slides = [
         description: "Leading the transition to green industrial practices with technology-driven metal recycling and carbon-aware sourcing.",
         image: "/img1.jpg",
         cta: "Start Recycling",
-        link: "/services"
+        link: "/services/recycling"
     }
 ];
 

@@ -224,7 +224,7 @@ export default function Dashboard() {
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-100/40 rounded-full blur-[120px] -ml-64 -mb-64" />
       </div>
 
-      <main className="flex-1 py-12 px-4 relative z-10">
+      <main className="flex-1 py-8 sm:py-10 lg:py-12 px-0 sm:px-6 lg:px-8 relative z-10">
         <div className="container mx-auto max-w-7xl">
           {/* Dashboard Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">

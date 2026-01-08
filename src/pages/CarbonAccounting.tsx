@@ -14,8 +14,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 
 // Industry standard emission factors (Tonnes CO2e per Tonne of metal)
 const FACTORS = {
-    VIRGIN: 1.9,
-    RECYCLED: 0.4,
+    VIRGIN: 2.55,
+    RECYCLED: 0.53,
     TRANSPORT: {
         truck: 0.0001, // 0.1 kg converted to tonnes
         rail: 0.00003, // 0.03 kg converted to tonnes
@@ -90,7 +90,7 @@ export default function CarbonAccounting() {
 
             {/* Hero Section */}
             <section className="relative py-20 overflow-hidden bg-slate-900 text-white">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518005020251-5828789547ea?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20" />
+                <div className="absolute inset-0 bg-[url('carbon-lohakart-carbon-accounting-lohakart.jpg')] bg-cover bg-center opacity-20" />
                 <div className="container relative z-10 mx-auto px-4 text-center items-center flex flex-col">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

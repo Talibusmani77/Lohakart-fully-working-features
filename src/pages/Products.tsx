@@ -143,12 +143,12 @@ export default function Products() {
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] lg:w-[600px] lg:h-[600px] bg-blue-50 rounded-full blur-[80px] sm:blur-[100px] lg:blur-[120px] -ml-32 sm:-ml-48 lg:-ml-64 -mb-32 sm:-mb-48 lg:-mb-64 opacity-40" />
       </div>
 
-      <main className="flex-1 py-8 sm:py-10 lg:py-12 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="container mx-auto max-w-7xl">
+      <main className="flex-1 py-8 sm:py-10 lg:py-12 px-0 sm:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto max-w-7xl px-0 sm:px-8">
           
 
           {/* Hero Section */}
-          <section className="mb-12 sm:mb-14 lg:mb-16">
+          <section className="mb-12 sm:mb-14 lg:mb-16 px-4 sm:px-0">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 sm:gap-8">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -197,7 +197,7 @@ export default function Products() {
           </section>
 
           {/* Products Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 px-4 sm:px-0">
             <AnimatePresence>
               {filteredProducts.map((product, index) => (
                 <motion.div
@@ -316,7 +316,7 @@ export default function Products() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-center py-20 sm:py-28 lg:py-32 bg-white rounded-2xl sm:rounded-[3rem] border border-dashed border-slate-200 mt-6 sm:mt-8 shadow-sm px-4"
+              className="text-center py-20 sm:py-28 lg:py-32 bg-white rounded-2xl sm:rounded-[3rem] border border-dashed border-slate-200 mt-6 sm:mt-8 shadow-sm px-4 mx-4 sm:mx-0"
             >
               <div className="w-20 h-20 sm:w-24 sm:h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                 <Package className="h-8 w-8 sm:h-10 sm:w-10 text-slate-200" />

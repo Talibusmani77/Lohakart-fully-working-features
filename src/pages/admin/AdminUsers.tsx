@@ -16,7 +16,9 @@ interface UserProfile {
   address: string;
   city: string;
   state: string;
+  pincode: string;
   created_at: string;
+  email?: string;
 }
 
 export default function AdminUsers() {
@@ -28,14 +30,25 @@ export default function AdminUsers() {
   }, []);
 
   const fetchUsers = async () => {
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('*')
-      .order('created_at', { ascending: false });
-    
-    if (!error && data) {
-      setUsers(data);
+    try {
+      // Call edge function to get users with emails (requires service role)
+      const { data, error } = await supabase.functions.invoke('get-users');
+
+      if (error) {
+        console.error('Error fetching users:', error);
+        toast.error('Failed to load users');
+        setLoading(false);
+        return;
+      }
+
+      if (data?.users) {
+        setUsers(data.users);
+      }
+    } catch (error) {
+      console.error('Unexpected error fetching users:', error);
+      toast.error('Failed to load users');
     }
+
     setLoading(false);
   };
 
@@ -49,13 +62,22 @@ export default function AdminUsers() {
         body: { userId },
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Edge function error:', error);
+        throw new Error(error.message || 'Failed to invoke delete function');
+      }
+
+      // Check if the response contains an error
+      if (data && typeof data === 'object' && 'error' in data) {
+        throw new Error(data.error as string);
+      }
 
       toast.success('User deleted successfully');
       fetchUsers();
     } catch (error) {
       console.error('Error deleting user:', error);
-      toast.error('Failed to delete user');
+      const errorMessage = error instanceof Error ? error.message : 'Failed to delete user';
+      toast.error(errorMessage);
     }
   };
 
@@ -116,6 +138,11 @@ export default function AdminUsers() {
                         Joined {formatDistanceToNow(new Date(user.created_at), { addSuffix: true })}
                       </span>
                     </div>
+                    {user.email && (
+                      <p className="text-muted-foreground">
+                        <span className="font-medium">Email:</span> {user.email}
+                      </p>
+                    )}
                     {user.phone && (
                       <p className="text-muted-foreground">
                         <span className="font-medium">Phone:</span> {user.phone}
@@ -124,6 +151,7 @@ export default function AdminUsers() {
                     {user.city && user.state && (
                       <p className="text-muted-foreground">
                         <span className="font-medium">Location:</span> {user.city}, {user.state}
+                        {user.pincode && ` - ${user.pincode}`}
                       </p>
                     )}
                     {user.address && (

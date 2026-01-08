@@ -184,8 +184,8 @@ export default function Home() {
   const testimonials = [
     {
       quote: "Lohakart has transformed how we source structural steel. Their transparent pricing and quality assurance are unmatched in the industry.",
-      author: "Ghufran Ahmad",
-      role: " CEO, Ahmad Metal Works",
+      author: "Govind Maurya",
+      role: " Project Manager, Utkarsh Steel",
       image: "/man1.jpg"
     },
     {
