@@ -36,6 +36,8 @@ import Careers from "./pages/Careers";
 import News from "./pages/News";
 import Article from "./pages/Article";
 import VisionMission from "./pages/VisionMission";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 import AdminNews from "./pages/admin/AdminNews";
 import AdminEditArticle from "./pages/admin/AdminEditArticle";
 import NotFound from "./pages/NotFound";
@@ -85,6 +87,8 @@ const App = () => (
               <Route path="/admin/news/:id" element={<AdminRoute><AdminEditArticle /></AdminRoute>} />
               <Route path="/admin/settings" element={<AdminRoute><AdminSettings /></AdminRoute>} />
               <Route path="/admin/recycling" element={<AdminRoute><AdminRecycling /></AdminRoute>} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/privacy" element={<Privacy />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

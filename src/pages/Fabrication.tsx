@@ -152,7 +152,7 @@ export default function Fabrication() {
                         transition={{ delay: 0.1 }}
                         className="text-xl text-slate-300 max-w-3xl mx-auto mb-8"
                     >
-                        From structural steel to custom industrial components, we transform your drawings into reliable, engineered products.
+                        From structural fabrication to custom industrial components, we transform your drawings into reliable, low carbon engineered products.
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -179,7 +179,7 @@ export default function Fabrication() {
                             <Badge className="mb-4 bg-orange-100 text-orange-700 hover:bg-orange-100 border-none px-4 py-1">E-Manufacturing network</Badge>
                             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fabrication & Processing</h2>
                             <p className="text-lg text-slate-600 leading-relaxed italic">
-                                Utilize our E-manufacturing network for a streamlined production experience. Our marketplace connects you with top suppliers in India, enhancing the efficiency of your supply chain.
+                                Utilize our E-manufacturing network for a streamlined production experience, enhancing the efficiency of your supply chain.
                             </p>
                         </motion.div>
                     </div>

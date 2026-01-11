@@ -18,7 +18,8 @@ import {
     XCircle,
     Eye,
     MessageSquare,
-    Send
+    Send,
+    Trash2
 } from 'lucide-react';
 import {
     Dialog,
@@ -115,6 +116,39 @@ export default function AdminRecycling() {
         }
     }
 
+    async function deleteRequest(id: string) {
+        if (!confirm('Are you sure you want to delete this recycling request? This action cannot be undone.')) {
+            return;
+        }
+
+        try {
+            const { error } = await (supabase as any)
+                .from('recycling_requests')
+                .delete()
+                .eq('id', id);
+
+            if (error) throw error;
+
+            toast({
+                title: "Request Deleted",
+                description: "Recycling request has been successfully deleted",
+            });
+
+            // Close dialog if this request is currently selected
+            if (selectedRequest?.id === id) {
+                setSelectedRequest(null);
+            }
+
+            fetchRequests();
+        } catch (error: any) {
+            toast({
+                title: "Error",
+                description: error.message,
+                variant: "destructive"
+            });
+        }
+    }
+
     const getStatusColor = (status: string) => {
         switch (status) {
             case 'Completed': return 'bg-green-100 text-green-700 border-green-200';
@@ -188,19 +222,30 @@ export default function AdminRecycling() {
                                                 </Badge>
                                             </td>
                                             <td className="px-6 py-4 text-right">
-                                                <Button
-                                                    variant="ghost"
-                                                    size="sm"
-                                                    onClick={() => {
-                                                        setSelectedRequest(req);
-                                                        setAdminResponse(req.admin_response || '');
-                                                        if (!req.admin_is_read) markAsRead(req.id);
-                                                    }}
-                                                    className="hover:bg-blue-100 hover:text-blue-600 rounded-xl"
-                                                >
-                                                    <Eye className="w-4 h-4 mr-2" />
-                                                    View
-                                                </Button>
+                                                <div className="flex items-center justify-end gap-2">
+                                                    <Button
+                                                        variant="ghost"
+                                                        size="sm"
+                                                        onClick={() => {
+                                                            setSelectedRequest(req);
+                                                            setAdminResponse(req.admin_response || '');
+                                                            if (!req.admin_is_read) markAsRead(req.id);
+                                                        }}
+                                                        className="hover:bg-blue-100 hover:text-blue-600 rounded-xl"
+                                                    >
+                                                        <Eye className="w-4 h-4 mr-2" />
+                                                        View
+                                                    </Button>
+                                                    <Button
+                                                        variant="ghost"
+                                                        size="sm"
+                                                        onClick={() => deleteRequest(req.id)}
+                                                        className="hover:bg-red-100 hover:text-red-600 rounded-xl"
+                                                    >
+                                                        <Trash2 className="w-4 h-4 mr-2" />
+                                                        Delete
+                                                    </Button>
+                                                </div>
                                             </td>
                                         </tr>
                                     ))

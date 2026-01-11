@@ -75,7 +75,7 @@ export function Footer() {
                 />
               </div>
               <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6">
-                Leading B2B metal procurement platform providing sustainable solutions for industrial needs across India.
+                Leading B2B metal procurement platform providing low carbon, sustainable solutions for industrial needs across India.
               </p>
               <div className="space-y-4 text-slate-400 text-sm">
                 {/* Address with Icon */}
@@ -197,7 +197,7 @@ export function Footer() {
               {/* Social Links */}
               <div className="flex items-center gap-3 md:gap-4">
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/lohakart/?viewAsMember=true"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-slate-800/80 hover:bg-[#005081] flex items-center justify-center transition-all hover:scale-110"
@@ -216,12 +216,21 @@ export function Footer() {
 
               {/* Additional Links */}
               <div className="flex items-center gap-3 md:gap-4 text-xs md:text-sm">
-                <button
-                  onClick={() => setShowTermsModal(true)}
+                <Link
+                  to="/terms"
+                  onClick={scrollToTop}
                   className="text-slate-400 hover:text-[#be1800] transition-colors"
                 >
                   Terms & Condition
-                </button>
+                </Link>
+                <span className="text-slate-600">|</span>
+                <Link
+                  to="/privacy"
+                  onClick={scrollToTop}
+                  className="text-slate-400 hover:text-[#be1800] transition-colors"
+                >
+                  Privacy Policy
+                </Link>
                 <span className="text-slate-600">|</span>
                 <button
                   onClick={() => setShowHelpModal(true)}
@@ -260,12 +269,12 @@ export function Footer() {
               Last updated: January 2025
             </DialogDescription>
           </DialogHeader>
-          
+
           <div className="space-y-6 text-sm text-slate-700 leading-relaxed">
             <div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">1. Acceptance of Terms</h3>
               <p>
-                By accessing and using Lohakart's services, you accept and agree to be bound by the terms and provision of this agreement. 
+                By accessing and using Lohakart's services, you accept and agree to be bound by the terms and provision of this agreement.
                 If you do not agree to abide by the above, please do not use this service.
               </p>
             </div>
@@ -273,8 +282,8 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">2. Use of Services</h3>
               <p>
-                Lohakart provides B2B metal procurement, fabrication, and recycling services. You agree to use our services only for 
-                lawful purposes and in accordance with these Terms. You are responsible for ensuring that your use of the services 
+                Lohakart provides B2B metal procurement, fabrication, and recycling services. You agree to use our services only for
+                lawful purposes and in accordance with these Terms. You are responsible for ensuring that your use of the services
                 complies with all applicable laws and regulations.
               </p>
             </div>
@@ -282,7 +291,7 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">3. Account Registration</h3>
               <p>
-                To access certain features, you may be required to register for an account. You agree to provide accurate, current, 
+                To access certain features, you may be required to register for an account. You agree to provide accurate, current,
                 and complete information during registration and to update such information to keep it accurate, current, and complete.
               </p>
             </div>
@@ -290,7 +299,7 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">4. Pricing and Payment</h3>
               <p>
-                All prices are subject to change without notice. Prices displayed are indicative and may vary based on order quantity, 
+                All prices are subject to change without notice. Prices displayed are indicative and may vary based on order quantity,
                 delivery location, and market conditions. Payment terms will be specified in individual purchase orders or agreements.
               </p>
             </div>
@@ -298,7 +307,7 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">5. Product Quality</h3>
               <p>
-                We ensure all products meet industry standards and specifications. However, Lohakart reserves the right to make changes 
+                We ensure all products meet industry standards and specifications. However, Lohakart reserves the right to make changes
                 to products and services without prior notice. All products are subject to availability.
               </p>
             </div>
@@ -306,7 +315,7 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">6. Intellectual Property</h3>
               <p>
-                All content, trademarks, and data on this website, including but not limited to software, databases, text, graphics, 
+                All content, trademarks, and data on this website, including but not limited to software, databases, text, graphics,
                 icons, and hyperlinks, are the property of or licensed to Lohakart and are protected by law.
               </p>
             </div>
@@ -314,7 +323,7 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">7. Limitation of Liability</h3>
               <p>
-                Lohakart shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from 
+                Lohakart shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from
                 your access to or use of, or inability to access or use, the services.
               </p>
             </div>
@@ -322,7 +331,7 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">8. Modifications to Terms</h3>
               <p>
-                Lohakart reserves the right to modify these terms at any time. Continued use of the services after any such changes 
+                Lohakart reserves the right to modify these terms at any time. Continued use of the services after any such changes
                 shall constitute your consent to such changes.
               </p>
             </div>
@@ -330,7 +339,7 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">9. Contact Information</h3>
               <p>
-                For any questions regarding these Terms & Conditions, please contact us at business@lohakart.com or call us at 
+                For any questions regarding these Terms & Conditions, please contact us at business@lohakart.com or call us at
                 +91-9580002078.
               </p>
             </div>
@@ -352,10 +361,10 @@ export function Footer() {
               Our support team is here to assist you. Reach out through any of the following channels.
             </DialogDescription>
           </DialogHeader>
-          
+
           <div className="space-y-4 mt-6">
             {/* WhatsApp */}
-            <div 
+            <div
               onClick={handleWhatsAppClick}
               className="bg-green-50 rounded-xl p-5 hover:bg-green-100 transition-colors cursor-pointer group"
             >

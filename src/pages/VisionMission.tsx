@@ -178,7 +178,7 @@ export default function VisionMission() {
                                 </h3>
                                 <div className="p-5 sm:p-6 rounded-2xl bg-gray-50 border-l-4" style={{ borderColor: '#005081' }}>
                                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed italic">
-                                        "To build the world's most intelligent, sustainable, and carbon-aware steel ecosystem — enabling industries to grow faster while reducing their environmental footprint."
+                                        "Our vision is to make carbon-aware steel the global default, not the exception. We believe the future of the steel industry will be shaped by intelligent decisions that balance cost, performance, and environmental impact. Lohakart exists to build the intelligence layer that enables this transformation—so every steel transaction, from sourcing to recycling, is informed by accurate carbon data and optimized for long-term sustainability. We envision a world where decarbonized steel is not driven by compliance pressure, but by smarter economics and better decision-making."
                                     </p>
                                 </div>
                                 <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -326,7 +326,7 @@ export default function VisionMission() {
                             </span>
                             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">Transforming Steel</h2>
                             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                                At Lohakart, our mission is to digitize and simplify the entire steel lifecycle — from the extraction of raw materials to the recycling of unused metal.
+                                Our mission is to empower steel producers, buyers, and processors with actionable carbon and cost intelligence. Through our Carbon Intelligence Engine, we help enterprises measure, model, and optimize emissions across procurement, production, fabrication, and recycling—without compromising commercial outcomes.
                             </p>
                         </div>
 

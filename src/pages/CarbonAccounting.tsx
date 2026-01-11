@@ -90,7 +90,13 @@ export default function CarbonAccounting() {
 
             {/* Hero Section */}
             <section className="relative py-20 overflow-hidden bg-slate-900 text-white">
-                <div className="absolute inset-0 bg-[url('carbon-lohakart-carbon-accounting-lohakart.jpg')] bg-cover bg-center opacity-20" />
+                <div
+  className="absolute inset-0 bg-cover bg-center opacity-20"
+  style={{
+    backgroundImage:
+      "url('/carbon-lohakart-carbon-accounting-lohakart.jpg')",
+  }}
+/>
                 <div className="container relative z-10 mx-auto px-4 text-center items-center flex flex-col">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -102,7 +108,7 @@ export default function CarbonAccounting() {
                         </Badge>
                         <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight">🌱 Carbon Accounting</h1>
                         <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-                            Transparent, data-driven carbon visibility for metal procurement. Build responsibly with industry-standard CO₂e calculations.
+                            Transparent, data-driven carbon visibility for down stream processing. Build responsibly with industry-standard CO₂e calculations through process level carbon measurements.
                         </p>
                         <Button size="lg" className="bg-green-600 hover:bg-green-700" onClick={() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' })}>
                             Start Accounting <ArrowRight className="ml-2 w-4 h-4" />
@@ -117,9 +123,9 @@ export default function CarbonAccounting() {
                 {/* Intro */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-6">
-                        <h2 className="text-4xl font-bold">Carbon Accounting in Metal Procurement</h2>
+                        <h2 className="text-4xl font-bold">Carbon Accounting for Services</h2>
                         <p className="text-lg text-muted-foreground">
-                            Lohakart’s Carbon Accounting solution helps businesses understand the environmental impact of metal procurement by accurately measuring carbon emissions associated with virgin and non-virgin (recycled) metals.
+                            Lohakart’s Carbon Accounting solution helps businesses understand the environmental impact of different services by accurately measuring carbon emissions associated with virgin and non-virgin (recycled) metals.
                         </p>
                         <div className="space-y-4">
                             {[
@@ -143,13 +149,13 @@ export default function CarbonAccounting() {
                             <Zap className="w-8 h-8 text-amber-500" />
                             <h4 className="font-bold">Virgin Metal</h4>
                             <p className="text-xs text-muted-foreground">Produced directly from ore materials. High energy consumption and higher emissions.</p>
-                            <Badge variant="secondary" className="text-[10px]">1.9 tCO2e/t</Badge>
+                            
                         </div>
                         <div className="p-6 rounded-3xl bg-green-50 border border-green-100 dark:bg-green-900/20 dark:border-green-800/50 space-y-3">
                             <Recycle className="w-8 h-8 text-green-600" />
                             <h4 className="font-bold">Non-Virgin</h4>
                             <p className="text-xs text-muted-foreground">Produced using recycled scrap metal. Significantly lower energy and footprint.</p>
-                            <Badge variant="secondary" className="text-[10px] bg-green-600/10 text-green-600">0.4 tCO2e/t</Badge>
+                            
                         </div>
                     </div>
                 </div>

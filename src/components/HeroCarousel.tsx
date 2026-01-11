@@ -8,23 +8,23 @@ const slides = [
     {
         id: 1,
         title: "Enterprise-Grade Carbon Intelligence Engine for Steel",
-        description: "Lohakart streamlines B2B metal procurement with real-time pricing, transparent logistics, and automated carbon accounting.",
+        description: "Lk facilitates B2B & B2C metal procurement by optimizing cost, carbon intensity, availability and compliance -before orders are placed.",
         image: "/metal-trading-b2b-solutions-lohakart-metal-materials.webp",
         cta: "Explore Marketplace",
         link: "/products"
     },
     {
         id: 2,
-        title: "Precision Engineering Advanced Metal Fabrication",
-        description: "From heavy sheet metal fabrication to precision laser cutting, we deliver engineered excellence for infrastructure and manufacturing.",
+        title: "Precision Engineering-Advanced Metal Fabrication",
+        description: "Optimize fabrication routes, yields, and timelines while tracking embedded carbon across downstream steel processing.",
         image: "/img2.jpg",
         cta: "Custom Fabrication",
         link: "/services/fabrication"
     },
     {
         id: 3,
-        title: "Circular Economy Sustainable Metal Recycling",
-        description: "Leading the transition to green industrial practices with technology-driven metal recycling and carbon-aware sourcing.",
+        title: "Circular Economy-Data Driven Sustainable Metal Recycling",
+        description: "Maximize scrap utilization, lower emissions, and quantify avoided carbon through optimized recycling pathways.",
         image: "/img1.jpg",
         cta: "Start Recycling",
         link: "/services/recycling"
