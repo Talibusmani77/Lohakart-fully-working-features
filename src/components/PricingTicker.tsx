@@ -46,7 +46,7 @@ export const PricingTicker = ({ variant = 'global' }: PricingTickerProps) => {
     return (
         <div
             className={`
-                ${isGlobal ? 'bg-slate-900 border-b border-white/5 py-3' : 'bg-blue-50/50 border border-blue-100 py-4 rounded-2xl md:rounded-3xl'}
+                ${isGlobal ? 'bg-slate-900 border-b border-white/5 py-3 sticky top-20 z-40' : 'bg-blue-50/50 border border-blue-100 py-4 rounded-2xl md:rounded-3xl'}
                 overflow-hidden relative group select-none
             `}
             onMouseEnter={() => setIsPaused(true)}
@@ -96,8 +96,8 @@ export const PricingTicker = ({ variant = 'global' }: PricingTickerProps) => {
             </div>
 
             {/* Decorative gradients for edges */}
-            <div className={`absolute inset-y-0 left-0 w-20 bg-gradient-to-r ${isGlobal ? 'from-slate-900' : 'from-blue-50/50'} to-transparent z-10 pointer-events-none`} />
-            <div className={`absolute inset-y-0 right-0 w-20 bg-gradient-to-l ${isGlobal ? 'from-slate-900' : 'from-blue-50/50'} to-transparent z-10 pointer-events-none`} />
-        </div>
+            <div className={`absolute inset-y-0 left-0 w-12 bg-gradient-to-r ${isGlobal ? 'from-slate-900' : 'from-blue-50/50'} to-transparent z-10 pointer-events-none`} />
+            <div className={`absolute inset-y-0 right-0 w-12 bg-gradient-to-l ${isGlobal ? 'from-slate-900' : 'from-blue-50/50'} to-transparent z-10 pointer-events-none`} />
+        </div >
     );
 };
