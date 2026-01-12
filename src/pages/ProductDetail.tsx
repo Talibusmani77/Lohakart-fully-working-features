@@ -12,7 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useCart } from '@/contexts/CartContext';
 import { useAuth } from '@/contexts/AuthContext';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Package, Truck, Shield, CheckCircle, Star, User } from 'lucide-react';
+import { ArrowLeft, Package, Truck, Shield, CheckCircle, Star, User, Plus, Minus } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface Product {
@@ -121,7 +121,7 @@ export default function ProductDetail() {
         price: product.price || 0,
         unit: product.unit || 'unit'
       }, quantity);
-      toast.success(`Added ${product.name} to cart`);
+      toast.success(`Added ${quantity} ${product.unit}(s) of ${product.name} to cart`);
     }
   };
 
@@ -186,8 +186,14 @@ export default function ProductDetail() {
 
   const minOrderQty = product.min_order || 1;
 
-  const updateQuantity = (val: number) => {
-    setQuantity(Math.max(minOrderQty, val));
+  // NEW: Increment function
+  const incrementQuantity = () => {
+    setQuantity(prev => prev + 1);
+  };
+
+  // NEW: Decrement function
+  const decrementQuantity = () => {
+    setQuantity(prev => Math.max(minOrderQty, prev - 1));
   };
 
   return (
@@ -284,20 +290,45 @@ export default function ProductDetail() {
 
               <div className="bg-white rounded-xl border border-slate-200 p-6 mb-8 shadow-sm">
                 <div className="mb-6">
-                  <Label htmlFor="quantity" className="text-base font-semibold mb-2 block">Quantity ({product.unit}s)</Label>
-                  <div className="flex items-center gap-4">
-                    <Input
-                      id="quantity"
-                      type="number"
-                      min={minOrderQty}
-                      step="1"
-                      value={quantity}
-                      onChange={(e) => updateQuantity(parseInt(e.target.value) || minOrderQty)}
-                      className="w-32 h-12 text-lg text-center font-bold"
-                    />
-                    <div className="text-sm text-slate-500">
-                      Minimum order: <span className="font-medium text-slate-900">{minOrderQty} {product.unit}s</span>
+                  <Label htmlFor="quantity" className="text-base font-semibold mb-3 block">Quantity ({product.unit}s)</Label>
+                  
+                  {/* NEW: Quantity Controls with +/- Buttons */}
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="flex items-center border-2 border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        onClick={decrementQuantity}
+                        disabled={(product.stock_qty || 0) <= 0}
+                        className="h-12 w-12 rounded-none hover:bg-slate-200 disabled:opacity-50"
+                      >
+                        <Minus className="h-5 w-5" />
+                      </Button>
+                      
+                      <div className="w-24 h-12 flex items-center justify-center border-x-2 border-slate-200 bg-white">
+                        <span className="text-2xl font-bold text-slate-900">{quantity}</span>
+                      </div>
+                      
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        onClick={incrementQuantity}
+                        disabled={(product.stock_qty || 0) <= 0}
+                        className="h-12 w-12 rounded-none hover:bg-slate-200 disabled:opacity-50"
+                      >
+                        <Plus className="h-5 w-5" />
+                      </Button>
                     </div>
+                    
+                    <div className="text-sm text-slate-600">
+                      <span className="font-semibold text-slate-900">{product.unit}s</span>
+                    </div>
+                  </div>
+                  
+                  <div className="text-sm text-slate-500">
+                    Minimum order: <span className="font-medium text-slate-900">{minOrderQty} {product.unit}s</span>
                   </div>
                 </div>
 
